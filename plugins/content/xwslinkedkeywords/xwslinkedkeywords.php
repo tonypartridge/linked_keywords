@@ -2,7 +2,7 @@
 
 /**
  * @package     Joomla.Plugin
- * @subpackage  Search.content
+ * @subpackage  com_xws_linked_keywords
  *
  * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -13,8 +13,8 @@ defined('_JEXEC') or die;
  * Content search plugin.
  *
  * @package     Joomla.Plugin
- * @subpackage  Search.content
- * @since       1.6
+ * @subpackage  com_xws_linked_keywords
+ * @since       3.7
  */
 class PlgContentMltkeywords extends JPlugin
 {
@@ -24,7 +24,7 @@ class PlgContentMltkeywords extends JPlugin
 		$app = JFactory::getApplication();
 		$menu = $app->getMenu();
 
-		$com_params = JComponentHelper::getParams('com_xwslinkedkeywords');
+		$com_params = JComponentHelper::getParams('com_xws_linked_keywords');
 		$global_limit = (int) $com_params->get('replacements_limit', 1);
 
 		//Lets get the tags:
