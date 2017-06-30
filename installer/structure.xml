@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<component>
+  <table action="change" old_name="#__xws_linked_keywords" new_name="#__xws_linked_keywords" table_name="#__xws_linked_keywords" storage_engine="" collation="utf8mb4_unicode_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="name" field_type="VARCHAR" field_length="255" description=""/>
+    <field field_name="link_externally" field_type="VARCHAR" field_length="255" description=""/>
+    <field field_name="menuitem" field_type="INT" field_length="11" description="Which menu item should this keyword link to?"/>
+    <field field_name="externalurl" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="change" field_name="limit_use_global" field_type="TINYINT" field_length="11" description=""/>
+    <field field_name="limit" field_type="INT" field_length="9" description="The number of times this keyword can be replaced within a page."/>
+  </table>
+</component>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_xws_linked_keywords</name>
+    <creationDate>2017-06-30</creationDate>
+    <copyright>2017 Tony Partridge - Xtech Web Services Ltd</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Tony Partridge</author>
+    <authorEmail>tony@xws.im</authorEmail>
+    <authorUrl>https://www.xws.im</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>A component and plugin which allows creating keywords and setting the find / replace limit.</description>
+    
+    <scriptfile>script.php</scriptfile>
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update> <!-- Runs on update -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/update.mysql.utf8.sql</file>
+        </sql>
+    </update>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>xws_linked_keywords.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <media destination="com_xws_linked_keywords" folder="media">
+        <folder>js</folder>
+        <folder>css</folder>
+    </media>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_xws_linked_keywords.ini</language>
+    </languages>
+    <administration>
+        <menu img="media/com_xws_linked_keywords/images/s_com_xws_linked_keywords.png" >COM_XWS_LINKED_KEYWORDS</menu>
+        <submenu>
+            
+			<menu link="option=com_xws_linked_keywords&amp;view=xwskeywords" view="xwskeywords" img="media/com_xws_linked_keywords/images/s_xwskeywords.png" alt="Xws_linked_keywords/Xwskeywords">COM_XWS_LINKED_KEYWORDS_TITLE_XWSKEYWORDS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>xws_linked_keywords.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_xws_linked_keywords.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_xws_linked_keywords.sys.ini</language>
+        </languages>
+    </administration>
+    <config>
+        <fields name="params">
+            <fieldset name="component">
+                <field name="save_history" default="0" />
+            </fieldset>
+        </fields>
+    </config>
+    <plugins>
+        <plugin group="content" plugin="xwslinkedkeywords"/>
+    </plugins>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

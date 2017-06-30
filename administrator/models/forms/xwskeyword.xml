@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="ordering"/>
+    <field name="state" default="1" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field name="checked_out" type="hidden" filter="unset"/>
+    <field name="checked_out_time" default="0000-00-00 00:00:00" type="hidden" filter="unset"/>
+    <field name="created_by" type="createdby" default="0" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_CREATED_BY" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_XWSKEYWORD_CREATED_BY" hidden="true" hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_CREATED_BY"/>
+    <field name="modified_by" type="modifiedby" default="0" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_MODIFIED_BY" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_XWSKEYWORD_MODIFIED_BY" hidden="true" hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_MODIFIED_BY"/>
+    <field name="name" type="text" filter="safehtml" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_NAME" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_XWSKEYWORD_NAME" hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_NAME"/>
+    <field name="link_externally" type="radio" class=" btn-group" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_LINK_EXTERNALLY" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_XWSKEYWORD_LINK_EXTERNALLY" hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_LINK_EXTERNALLY">
+      <option value="0">COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_LINK_EXTERNALLY_OPTION_0</option>
+      <option value="1">COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_LINK_EXTERNALLY_OPTION_1</option>
+    </field>
+    <field name="menuitem" type="menuitem" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_MENUITEM" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_XWSKEYWORD_MENUITEM" hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_MENUITEM" showon="link_externally:0"/>
+    <field name="externalurl" type="url" validate="url" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_EXTERNALURL" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_XWSKEYWORD_EXTERNALURL" hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_EXTERNALURL" showon="link_externally:1"/>
+    <field name="limit_use_global" type="radio" buttons="true" class="btn-group btn-group-yesno" default="1" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_LIMIT_USE_GLOBAL" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_XWSKEYWORD_LIMIT_USE_GLOBAL" hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_LIMIT_USE_GLOBAL">
+      <option value="1">COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_LIMIT_USE_GLOBAL_OPTION_ON</option>
+      <option value="0">COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_LIMIT_USE_GLOBAL_OPTION_OFF</option>
+    </field>
+    <field name="limit" default="1" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_LIMIT" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_XWSKEYWORD_LIMIT" hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_LIMIT" showon="limit_use_global:0"/>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+</form>
