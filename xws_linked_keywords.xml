@@ -9,7 +9,11 @@
     <authorUrl>https://www.xws.im</authorUrl>
     <version>CVS: 1.0.0</version>
     <description>A component and plugin which allows creating keywords and setting the find / replace limit.</description>
-    
+
+    <updateservers>
+        <server type="extension" priority="2" name="XWS Linked Keywords">https://updates.xws.im/com_xws_linked_keywords/com_xws_linked_keywords.xml</server>
+    </updateservers>
+
     <scriptfile>script.php</scriptfile>
     
     <install> <!-- Runs on install -->
