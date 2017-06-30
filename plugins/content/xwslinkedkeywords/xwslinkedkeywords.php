@@ -57,8 +57,17 @@ class PlgContentMltkeywords extends JPlugin
 				$limit = (int) $result->limit;
 			}
 
-			$m_item = $menu->getItem($result->menuitem);
-			$html_link = '<a href="' . $m_item->route . '" alt="' . $result->name . '" class="xwslinked_keyword">' . $result->name . '</a>';
+			if ($result->link_externally === 0)
+			{
+				$m_item    = $menu->getItem($result->menuitem);
+				$route     = $m_item->route;
+				$target    = 'target="_self"';
+			} else {
+				$route     = $result->externalurl;
+				$target    = 'target="_blank" rel="noopener noreferrer"';
+			}
+
+			$html_link = '<a href="' . $route . '" alt="' . $result->name . '" class="xwslinked_keyword" ' . $target .'>' . $result->name . '</a>';
 
 			$pattern = '\'(?!((<.*?)|(<a.*?)|(<script.*?)|(<style.*?)|(data-jmodediturl=")))(\b'.$result->name.'\b)(?!(([^<>]*?)>)|([^>]*?</a>)|([^>]*?</span></a>)|([^>]*?</script>)|([^>]*?</style>)|([^>]*?"))\'s' . $case;
 			$replace = $html_link;
