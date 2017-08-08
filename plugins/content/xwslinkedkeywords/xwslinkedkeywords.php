@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * @subpackage  com_xws_linked_keywords
  * @since       3.7
  */
-class PlgContentMltkeywords extends JPlugin
+class PlgContentXwsLinkedKeywords extends JPlugin
 {
 
 	public function onContentPrepare($context, &$row, &$params, $page = 0)
@@ -69,24 +69,24 @@ class PlgContentMltkeywords extends JPlugin
 
 			$html_link = '<a href="' . $route . '" alt="' . $result->name . '" class="xwslinked_keyword" ' . $target .'>' . $result->name . '</a>';
 
-			$pattern = '\'(?!((<.*?)|(<a.*?)|(<script.*?)|(<style.*?)|(data-jmodediturl=")))(\b'.$result->name.'\b)(?!(([^<>]*?)>)|([^>]*?</a>)|([^>]*?</span></a>)|([^>]*?</script>)|([^>]*?</style>)|([^>]*?"))\'s' . $case;
+			$pattern = '\'(?!<a[^>]*?>)(?!<script[^>]*?>)(' . $result->name . ')(?![^<]*?<\/a>)(?![^<]*?<\/script>)\'s';
 			$replace = $html_link;
 
 			$row->text = preg_replace($pattern, $replace, $row->text, $limit, $count);
 
-			if ($count === 0) {
-				$pattern = '\'(?!((<.*?)|(<a.*?)|(<script.*?)|(<style.*?)|(data-jmodediturl=")))(\b '.$result->name.' \b)(?!(([^<>]*?)>)|([^>]*?</a>)|([^>]*?</span></a>)|([^>]*?</script>)|([^>]*?</style>)|([^>]*?"))\'s' . $case;
-				$replace = ' ' . $html_link . ' ';
-
-				$row->text = preg_replace($pattern, $replace, $row->text, $limit, $count2);
-			}
-
-			if (isset($count2) && $count2 === 0) {
-				$pattern = '\'(?!((<.*?)|(<a.*?)|(<script.*?)|(<style.*?)|(data-jmodediturl=")))(\b'.$result->name.' \b)(?!(([^<>]*?)>)|([^>]*?</a>)|([^>]*?</span></a>)|([^>]*?</script>)|([^>]*?</style>)|([^>]*?"))\'s' . $case;
-				$replace = $html_link . ' ';
-
-				$row->text = preg_replace($pattern, $replace, $row->text, $limit, $count2);
-			}
+//			if ($count === 0) {
+//				$pattern = '\'(?!((<.*?)|(<a.*?)|(<script.*?)|(<style.*?)|(data-jmodediturl=")))(\b '.$result->name.' \b)(?!(([^<>]*?)>)|([^>]*?</a>)|([^>]*?</span></a>)|([^>]*?</script>)|([^>]*?</style>)|([^>]*?"))\'s' . $case;
+//				$replace = ' ' . $html_link . ' ';
+//
+//				$row->text = preg_replace($pattern, $replace, $row->text, $limit, $count2);
+//			}
+//
+//			if (isset($count2) && $count2 === 0) {
+//				$pattern = '\'(?!((<.*?)|(<a.*?)|(<script.*?)|(<style.*?)|(data-jmodediturl=")))(\b'.$result->name.' \b)(?!(([^<>]*?)>)|([^>]*?</a>)|([^>]*?</span></a>)|([^>]*?</script>)|([^>]*?</style>)|([^>]*?"))\'s' . $case;
+//				$replace = $html_link . ' ';
+//
+//				$row->text = preg_replace($pattern, $replace, $row->text, $limit, $count2);
+//			}
 
 
 			// Reset the count

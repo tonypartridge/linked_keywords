@@ -1,6 +1,6 @@
 <?php
 /**
- * @version    CVS: 1.0.0
+ * @version    1.0.1
  * @package    Com_Xws_linked_keywords
  * @author     Tony Partridge <tony@xws.im>
  * @copyright  2017 Tony Partridge - Xtech Web Services Ltd
