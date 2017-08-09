@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @version    1.0.1
+ * @version    1.0.3
  * @package    Com_Xws_linked_keywords
  * @author     Tony Partridge <tony@xws.im>
  * @copyright  2017 Tony Partridge - Xtech Web Services Ltd
