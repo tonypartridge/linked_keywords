@@ -7,7 +7,7 @@
     <author>Tony Partridge</author>
     <authorEmail>tony@xws.im</authorEmail>
     <authorUrl>https://www.xws.im</authorUrl>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
     <description>A component and plugin which allows creating keywords and setting the find / replace limit.</description>
 
     <updateservers>

@@ -37,7 +37,7 @@ class Xws_linked_keywordsModelXwskeywords extends JModelList
 				'created_by', 'a.`created_by`',
 				'modified_by', 'a.`modified_by`',
 				'name', 'a.`name`',
-				'link_externally', 'a.`link_externally`',
+				'link_type', 'a.`link_type`',
 				'menuitem', 'a.`menuitem`',
 				'externalurl', 'a.`externalurl`',
 				'limit_use_global', 'a.`limit_use_global`',
@@ -71,8 +71,8 @@ class Xws_linked_keywordsModelXwskeywords extends JModelList
 
 		$published = $app->getUserStateFromRequest($this->context . '.filter.state', 'filter_published', '', 'string');
 		$this->setState('filter.state', $published);
-		// Filtering link_externally
-		$this->setState('filter.link_externally', $app->getUserStateFromRequest($this->context.'.filter.link_externally', 'filter_link_externally', '', 'string'));
+		// Filtering link_type
+		$this->setState('filter.link_type', $app->getUserStateFromRequest($this->context.'.filter.link_type', 'filter_link_type', '', 'string'));
 
 
 		// Load the parameters.
@@ -167,11 +167,11 @@ class Xws_linked_keywordsModelXwskeywords extends JModelList
 		}
 
 
-		//Filtering link_externally
-		$filter_link_externally = $this->state->get("filter.link_externally");
-		if ($filter_link_externally !== null && !empty($filter_link_externally))
+		//Filtering link_type
+		$filter_link_type = $this->state->get("filter.link_type");
+		if ($filter_link_type !== null && !empty($filter_link_type))
 		{
-			$query->where("a.`link_externally` = '".$db->escape($filter_link_externally)."'");
+			$query->where("a.`link_type` = '".$db->escape($filter_link_type)."'");
 		}
 		// Add the list ordering clause.
 		$orderCol  = $this->state->get('list.ordering');
@@ -195,7 +195,7 @@ class Xws_linked_keywordsModelXwskeywords extends JModelList
 		$items = parent::getItems();
 
 		foreach ($items as $oneItem) {
-					$oneItem->link_externally = ($oneItem->link_externally == '') ? '' : JText::_('COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_LINK_EXTERNALLY_OPTION_' . strtoupper($oneItem->link_externally));
+					$oneItem->link_type= ($oneItem->link_type == '') ? '' : JText::_('COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_LINK_TYPE_OPTION_' . strtoupper($oneItem->link_type));
 
 			if ( isset($oneItem->menuitem) ) {
 

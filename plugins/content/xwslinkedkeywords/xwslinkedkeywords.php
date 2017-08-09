@@ -27,8 +27,6 @@ class PlgContentXwsLinkedKeywords extends JPlugin
 		$com_params = JComponentHelper::getParams('com_xws_linked_keywords');
 		$global_limit = (int) $com_params->get('replacements_limit', 1);
 
-		//Lets get the tags:
-
 		// Get a db connection.
 		$db = JFactory::getDbo();
 
@@ -37,7 +35,7 @@ class PlgContentXwsLinkedKeywords extends JPlugin
 
 		// Select all records from the user profile table where key begins with "custom.".
 		// Order it by the ordering field.
-		$query->select($db->quoteName(array('name', 'menuitem', 'limit_use_global', 'limit')));
+		$query->select($db->quoteName(array('name', 'menuitem', 'link_type', 'externalurl', 'tag', 'limit_use_global', 'limit')));
 		$query->from($db->quoteName('#__xws_linked_keywords'));
 		$query->where($db->quoteName('state') . ' = 1');
 		$query->order('ordering ASC');
@@ -50,24 +48,32 @@ class PlgContentXwsLinkedKeywords extends JPlugin
 
 		// Make case sensitive
 		$case = 'i';
+		$html_link ='#';
 
 		foreach ($results as $result) {
 			$limit = $global_limit;
 			if ((int) $result->limit_use_global === 0) {
 				$limit = (int) $result->limit;
 			}
-
-			if ((int)$result->link_externally === 0)
+			if ((int)$result->link_type === 0)
 			{
 				$m_item    = $menu->getItem((int)$result->menuitem);
 				$route     = JRoute::_($m_item->link);
 				$target    = 'target="_self"';
-			} else {
+
+				$html_link = '<a href="' . $route . '" alt="' . $result->name . '" class="xwslinked_keyword" ' . $target .'>' . $result->name . '</a>';
+
+			} else if((int)$result->link_type === 1) {
 				$route     = $result->externalurl;
 				$target    = 'target="_blank" rel="noopener noreferrer"';
+
+				$html_link = '<a href="' . $route . '" alt="' . $result->name . '" class="xwslinked_keyword" ' . $target .'>' . $result->name . '</a>';
+
+			} else if((int)$result->link_type === 2)
+			{
+				 $html_link = '<a href=' . JRoute::_('index.php?option=com_tags&view=tag&id=' . $result->tag) . '>' . $result->name . '</a>';
 			}
 
-			$html_link = '<a href="' . $route . '" alt="' . $result->name . '" class="xwslinked_keyword" ' . $target .'>' . $result->name . '</a>';
 
 			$pattern = '\'(?!<a[^>]*?>)(?!<script[^>]*?>)(' . $result->name . ')(?![^<]*?<\/a>)(?![^<]*?<\/script>)\'s';
 			$replace = $html_link;

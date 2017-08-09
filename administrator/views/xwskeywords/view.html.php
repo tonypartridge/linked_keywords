@@ -153,7 +153,7 @@ class Xws_linked_keywordsViewXwskeywords extends JViewLegacy
 			'a.`ordering`' => JText::_('JGRID_HEADING_ORDERING'),
 			'a.`state`' => JText::_('JSTATUS'),
 			'a.`name`' => JText::_('COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_NAME'),
-			'a.`link_externally`' => JText::_('COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_LINK_EXTERNALLY'),
+			'a.`link_type`' => JText::_('COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_LINK_TYPE'),
 			'a.`menuitem`' => JText::_('COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_MENUITEM'),
 		);
 	}

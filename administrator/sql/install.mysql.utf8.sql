@@ -8,9 +8,10 @@ CREATE TABLE IF NOT EXISTS `#__xws_linked_keywords` (
 `created_by` INT(11)  NOT NULL ,
 `modified_by` INT(11)  NOT NULL ,
 `name` VARCHAR(255)  NOT NULL ,
-`link_externally` VARCHAR(255)  NOT NULL ,
+`link_type` VARCHAR(255)  NOT NULL ,
 `menuitem` INT(11)  NOT NULL ,
 `externalurl` VARCHAR(255)  NOT NULL ,
+`tag` VARCHAR(255)  NOT NULL ,
 `limit_use_global` TINYINT(1)  NOT NULL ,
 `limit` INT(9)  NOT NULL ,
 PRIMARY KEY (`id`)
