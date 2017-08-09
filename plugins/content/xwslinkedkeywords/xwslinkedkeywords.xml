@@ -3,11 +3,11 @@
     <name>plg_content_xwslinkedkeywords</name>
     <author>Tony Partridge</author>
     <creationDate>2017-06-26</creationDate>
-    <copyright>2017 Tony Partridge - Moore Legal Technology Ltd</copyright>
+    <copyright>2017 Tony Partridge - Xtech Web Services Ltd</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <authorEmail>tony@moorelegaltechnology.co.uk</authorEmail>
-    <authorUrl>https://www.moorelegaltechnology.co.uk</authorUrl>
-    <version>1.0.1</version>
+    <authorEmail>tony@xws.im</authorEmail>
+    <authorUrl>https://www.xws.im</authorUrl>
+    <version>1.0.2</version>
     <description>PLG_CONTENT_COM_XWSLINKEDKEYWORDS_XML_DESCRIPTION</description>
     <files>
         <filename plugin="xwslinkedkeywords">xwslinkedkeywords.php</filename>
@@ -20,13 +20,8 @@
     </languages>
     <config>
         <fields name="params">
-
             <fieldset name="basic">
-                <field name="search_limit" type="text" default="50" size="5"
-                       description="PLG_CONTENT_COM_XWSLINKEDKEYWORDS_FIELD_SEARCHLIMIT_DESC"
-                       label="PLG_CONTENT_COM_XWSLINKEDKEYWORDS_FIELD_SEARCHLIMIT_LABEL" />
             </fieldset>
-
         </fields>
     </config>
 </extension>

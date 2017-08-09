@@ -57,10 +57,10 @@ class PlgContentXwsLinkedKeywords extends JPlugin
 				$limit = (int) $result->limit;
 			}
 
-			if ($result->link_externally === 0)
+			if ((int)$result->link_externally === 0)
 			{
-				$m_item    = $menu->getItem($result->menuitem);
-				$route     = $m_item->route;
+				$m_item    = $menu->getItem((int)$result->menuitem);
+				$route     = JRoute::_($m_item->link);
 				$target    = 'target="_self"';
 			} else {
 				$route     = $result->externalurl;
