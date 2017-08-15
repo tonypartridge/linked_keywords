@@ -29,7 +29,7 @@
            hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_MENUITEM" showon="link_type:0" published="1"/>
     <field name="externalurl" type="url" validate="url" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_EXTERNALURL" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_XWSKEYWORD_EXTERNALURL"
            hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_EXTERNALURL" showon="link_type:1"/>
-    <field name="limit_use_global" type="radio" buttons="true" class="btn-group btn-group-yesno" default="1" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_LIMIT_USE_GLOBAL" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_XWSKEYWORD_LIMIT_USE_GLOBAL" hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_LIMIT_USE_GLOBAL">
+    <field name="limit_use_global" type="radio" buttons="true" class="btn-group btn-group-yesno" default="1" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_XWSKEYWORD_LIMIT_USE_GLOBAL" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_XWSKEYWORD_LIMIT_USE_GLOBAL">
       <option value="1">COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_LIMIT_USE_GLOBAL_OPTION_ON</option>
       <option value="0">COM_XWS_LINKED_KEYWORDS_XWSKEYWORDS_LIMIT_USE_GLOBAL_OPTION_OFF</option>
     </field>

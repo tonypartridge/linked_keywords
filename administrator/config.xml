@@ -2,7 +2,10 @@
 <config>
     <fieldset label="COM_XWS_LINKED_KEYWORDS" name="xws_linked_keywords">
         <field name="replacements_limit" type="text" maxlength="9" filter="int" default="1" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_REPLACEMENTS_LIMIT" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_REPLACEMENTS_LIMIT" hint="COM_XWS_LINKED_KEYWORDS_FORM_LBL_REPLACEMENTS_LIMIT"/>
-
+        <field name="headings" default="0" type="radio" class=" btn-group" label="COM_XWS_LINKED_KEYWORDS_FORM_LBL_HEADINGS_SEARCH" description="COM_XWS_LINKED_KEYWORDS_FORM_DESC_HEADINGS_SEARCH">
+            <option value="0">COM_XWS_LINKED_KEYWORDS_FORM_LBL_HEADINGS_SEARCH_OPTION_0</option>
+            <option value="1">COM_XWS_LINKED_KEYWORDS_FORM_LBL_HEADINGS_SEARCH_OPTION_1</option>
+        </field>
     </fieldset>
 
     <fieldset name="permissions" description="JCONFIG_PERMISSIONS_DESC" label="JCONFIG_PERMISSIONS_LABEL">

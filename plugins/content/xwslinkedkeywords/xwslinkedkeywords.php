@@ -74,8 +74,16 @@ class PlgContentXwsLinkedKeywords extends JPlugin
 				 $html_link = '<a href=' . JRoute::_('index.php?option=com_tags&view=tag&id=' . $result->tag) . '>' . $result->name . '</a>';
 			}
 
+			$additionalPatternStart = array();
+			$additionalPatternEnd = array();
 
-			$pattern = '\'(?!<a[^>]*?>)(?!<script[^>]*?>)(' . $result->name . ')(?![^<]*?<\/a>)(?![^<]*?<\/script>)\'s';
+			if ((int) $com_params->get('headings', 0) !== 1)
+			{
+				$additionalPatternStart[] = '(?!<h[^>]*?>)';
+				$additionalPatternEnd[]   = '(?![^<]*?<\/h[^>]*?>)';
+			}
+
+			$pattern = '\'(?!<a[^>]*?>)(?!<script[^>]*?>)' . implode($additionalPatternStart) . '(' . $result->name . ')(?![^<]*?<\/a>)(?![^<]*?<\/script>)' . implode($additionalPatternEnd) . '\'s';
 			$replace = $html_link;
 
 			$row->text = preg_replace($pattern, $replace, $row->text, $limit, $count);
