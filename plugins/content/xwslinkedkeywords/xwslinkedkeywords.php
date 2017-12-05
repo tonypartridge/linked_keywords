@@ -83,7 +83,7 @@ class PlgContentXwsLinkedKeywords extends JPlugin
 				$additionalPatternEnd[]   = '(?![^<]*?<\/h[^>]*?>)';
 			}
 
-			$pattern = '\'(?!<a[^>]*?>)(?!<script[^>]*?>)' . implode($additionalPatternStart) . '(' . $result->name . ')(?![^<]*?<\/a>)(?![^<]*?<\/script>)' . implode($additionalPatternEnd) . '\'s';
+			$pattern = '\'(?!<a[^>]*?>)(?!<script[^>]*?>)' . implode($additionalPatternStart) . '(' . addslashes($result->name) . ')(?![^<]*?<\/a>)(?![^<]*?<\/script>)' . implode($additionalPatternEnd) . '\'s';
 			$replace = $html_link;
 
 			$row->text = preg_replace($pattern, $replace, $row->text, $limit, $count);
