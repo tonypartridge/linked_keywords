@@ -58,7 +58,7 @@ class PlgContentXwsLinkedKeywords extends JPlugin
 			if ((int)$result->link_type === 0)
 			{
 				$m_item    = $menu->getItem((int)$result->menuitem);
-				$route     = JRoute::_($m_item->link);
+				$route     = JRoute::_($m_item->link . '&Itemid=' . $m_item->id);
 				$target    = 'target="_self"';
 
 				$html_link = '<a href="' . $route . '" alt="' . $result->name . '" class="xwslinked_keyword" ' . $target .'>' . $result->name . '</a>';
